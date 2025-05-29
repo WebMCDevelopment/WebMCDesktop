@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "electron .",
-    "build": "electron-builder --win --linux --x64",
-    "mac": "electron-builder --mac --arm64"
+    "build": "./build.sh --win --linux --x64",
+    "mac": "./build.sh --mac --arm64"
   },
   "build": {
     "appId": "dev.colbster937.webmcdesktop",
