@@ -1,0 +1,42 @@
+name: Build Electron App
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: macos-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 22
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build for all platforms
+        run: npm run build
+
+      - name: Upload dmg
+        uses: actions/upload-artifact@v3
+        with:
+          name: macOS
+          path: dist/*.dmg
+
+      - name: Upload exe
+        uses: actions/upload-artifact@v3
+        with:
+          name: windows
+          path: dist/*.exe
+
+      - name: Upload AppImage
+        uses: actions/upload-artifact@v3
+        with:
+          name: linux
+          path: dist/*.AppImage
