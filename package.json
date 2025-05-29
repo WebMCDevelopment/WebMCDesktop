@@ -6,7 +6,7 @@
   "scripts": {
     "start": "electron .",
     "build": "./build.sh --win --linux --x64",
-    "mac": "./build.sh --mac --arm64"
+    "mac": "./build.sh --mac --arm64 && xattr -d com.apple.quarantine dist/*.dmg"
   },
   "build": {
     "appId": "dev.colbster937.webmcdesktop",
