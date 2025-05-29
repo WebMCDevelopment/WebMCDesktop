@@ -23,20 +23,20 @@ jobs:
       - name: Build for all platforms
         run: npm run build && npm run mac
 
-      - name: Upload dmg
-        uses: actions/upload-artifact@v4
-        with:
-          name: macOS
-          path: dist/*.dmg
-
       - name: Upload exe
         uses: actions/upload-artifact@v4
         with:
-          name: windows
+          name: app-windows
           path: dist/*.exe
+
+      - name: Upload dmg
+        uses: actions/upload-artifact@v4
+        with:
+          name: app-macOS
+          path: dist/*.dmg
 
       - name: Upload AppImage
         uses: actions/upload-artifact@v4
         with:
-          name: linux
+          name: app-linux
           path: dist/*.AppImage

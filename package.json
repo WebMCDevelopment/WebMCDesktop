@@ -11,18 +11,22 @@
   "build": {
     "appId": "dev.colbster937.webmcdesktop",
     "productName": "WebMC",
+    "artifactName": "${productName}-${version}-${arch}.${ext}",
     "publish": null,
     "files": [
       "**/*"
     ],
     "mac": {
-      "target": "dmg"
+      "target": "dmg",
+      "arch": ["universal"]
     },
     "win": {
-      "target": "nsis"
+      "target": "nsis",
+      "arch": ["x64"]
     },
     "linux": {
-      "target": "AppImage"
+      "target": "AppImage",
+      "arch": ["x64"]
     }
   },
   "keywords": [],
