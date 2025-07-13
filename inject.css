@@ -1,0 +1,4 @@
+.settings .setting:nth-child(5),
+.settings .setting.popupTab {
+  display: none !important;
+}

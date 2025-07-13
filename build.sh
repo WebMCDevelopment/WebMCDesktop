@@ -8,10 +8,15 @@ if [ -z "$ARGS" ]; then
 fi
 
 mkdir -p build
-curl -fsSL "https://webmc.xyz/assets/img/webmc.png" -o "./build/icon.png"
+cp inject.css build/inject.css
+curl -fsSL "https://app.webmc.xyz/assets/img/webmc.png" -o "./build/icon.png"
 if [[ $? -ne 0 ]]; then
   echo "Failed to download icon."
   exit 1
+fi
+
+if command -v convert &> /dev/null; then
+  convert build/icon.png -define icon:auto-resize=256,128,64,48,32,16 build/icon.ico
 fi
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
