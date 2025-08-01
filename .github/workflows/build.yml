@@ -40,25 +40,3 @@ jobs:
         with:
           name: app-linux
           path: dist/*.AppImage
-          
-  flatpak:
-    needs: build
-    runs-on: ubuntu-latest
-    container:
-      image: ghcr.io/flathub-infra/flatpak-github-actions:gnome-48
-      options: --privileged
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Build Flatpak
-        run: |
-          ./flatpak.sh
-
-      - name: Upload Flatpak
-        uses: actions/upload-artifact@v4
-        with:
-          name: app-flatpak
-          path: |
-            webmc.flatpak
-            install-flatpak.sh

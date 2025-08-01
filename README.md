@@ -5,5 +5,3 @@
 [**macOS**](https://nightly.link/WebMCDevelopment/WebMCDesktop/workflows/build/main/app-macOS.zip)
 
 [**Linux**](https://nightly.link/WebMCDevelopment/WebMCDesktop/workflows/build/main/app-linux.zip)
-
-[**Flatpak**](https://nightly.link/WebMCDevelopment/WebMCDesktop/workflows/build/main/app-flatpak.zip)

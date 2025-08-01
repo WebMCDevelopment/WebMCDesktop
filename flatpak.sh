@@ -9,12 +9,12 @@ if ! [ -d "dist/linux-unpacked" ]; then
 fi
 
 if ! command -v flatpak &> /dev/null; then
-  apt update
-  apt install -y flatpak flatpak-builder
+  sudo apt update
+  sudo apt install -y flatpak flatpak-builder
 fi
 
 if ! command -v convert &> /dev/null; then
-  apt install -y imagemagick
+  sudo apt install -y imagemagick
 fi
 
 if ! flatpak remotes | grep -q flathub; then
