@@ -18,7 +18,7 @@ if ! command -v convert &> /dev/null; then
 fi
 
 if ! flatpak remotes | grep -q flathub; then
-  flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo || true
+  flatpak --user remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo || true
 fi
 
 if ! flatpak info org.freedesktop.Platform//23.08 &> /dev/null; then
