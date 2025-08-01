@@ -17,8 +17,8 @@ if ! command -v convert &> /dev/null; then
   sudo apt install -y imagemagick
 fi
 
-if ! flatpak remotes | grep -q flathub; then
-  flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+if ! flatpak remotes --user | grep -q flathub; then
+  flatpak --user remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 fi
 
 if ! flatpak info org.freedesktop.Platform//23.08 &> /dev/null; then
