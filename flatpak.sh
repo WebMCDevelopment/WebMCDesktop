@@ -4,6 +4,7 @@ set -e
 if ! [ -d "dist/linux-unpacked" ]; then
   # echo "App not found, please build first."
   # exit 1
+  npm install
   ./build.sh --linux --x64
 fi
 
