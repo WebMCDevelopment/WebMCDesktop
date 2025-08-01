@@ -6,4 +6,4 @@
 
 [**Linux**](https://nightly.link/WebMCDevelopment/WebMCDesktop/workflows/build/main/app-linux.zip)
 
-[**FlatPak**](https://nightly.link/WebMCDevelopment/WebMCDesktop/workflows/build/main/app-flatpak.zip)
+[**Flatpak**](https://nightly.link/WebMCDevelopment/WebMCDesktop/workflows/build/main/app-flatpak.zip)

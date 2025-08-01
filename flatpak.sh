@@ -2,8 +2,9 @@
 set -e
 
 if ! [ -d "dist/linux-unpacked" ]; then
-  echo "App not found, please build first."
-  exit 1
+  # echo "App not found, please build first."
+  # exit 1
+  ./build.sh --linux --x64
 fi
 
 if ! command -v flatpak &> /dev/null; then
