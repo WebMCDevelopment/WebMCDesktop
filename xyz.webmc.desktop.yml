@@ -1,0 +1,37 @@
+app-id: xyz.webmc.desktop
+runtime: org.freedesktop.Platform
+runtime-version: '23.08'
+base-version: '23.08'
+sdk: org.freedesktop.Sdk
+base: org.electronjs.Electron2.BaseApp
+sdk-extensions:
+  - org.freedesktop.Sdk.Extension.node18
+build-options:
+  append-path: /usr/lib/sdk/node18/bin
+  env:
+    NPM_CONFIG_LOGLEVEL: info
+command: run.sh
+finish-args:
+  - --share=network
+  - --filesystem=home
+  - --socket=x11
+  - --socket=wayland
+  - --device=dri
+  - --socket=pulseaudio
+  - --env=ELECTRON_IS_DEV=false
+  - --env=XCURSOR_PATH=/run/host/user-share/icons:/run/host/share/icons
+modules:
+  - name: WebMC
+    buildsystem: simple
+    build-commands:
+      - cp -a app /app/main
+      - install -Dm755 run.sh /app/bin/
+      - install -D WebMC.desktop /app/share/applications/xyz.webmc.desktop.desktop
+      - install -D icon.png /app/share/icons/hicolor/512x512/apps/xyz.webmc.desktop.png
+    sources:
+      - type: dir
+        path: tmp
+      - type: script
+        dest-filename: run.sh
+        commands:
+          - zypak-wrapper.sh /app/main/webmc "$@"

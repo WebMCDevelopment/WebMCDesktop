@@ -1,12 +1,13 @@
 {
   "name": "webmc",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "",
   "main": "index.js",
   "scripts": {
     "start": "electron .",
     "build": "./build.sh --win --linux --x64",
-    "mac": "./build.sh --mac --arm64"
+    "mac": "./build.sh --mac --arm64",
+    "flatpak": "./flatpak.sh"
   },
   "build": {
     "appId": "xyz.webmc.desktop",
@@ -15,7 +16,22 @@
     "icon": "build/icon",
     "publish": null,
     "files": [
-      "**/*"
+      "**/*",
+      "!**/.DS_Store",
+      "!dist",
+      "!dist/**",
+      "!node_modules",
+      "!node_modules/**",
+      "!build",
+      "!build/**",
+      "!build-dir",
+      "!build-dir/**",
+      "!.flatpak-builder",
+      "!.flatpak-builder/**",
+      "!tmp",
+      "!tmp/**",
+      "!repo",
+      "!repo/**"
     ],
     "mac": {
       "target": "dmg"

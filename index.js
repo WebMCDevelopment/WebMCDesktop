@@ -4,7 +4,7 @@ const { app, BrowserWindow, screen, Menu } = require('electron')
 
 Menu.setApplicationMenu(null)
 if (process.argv.includes('--portable')) app.setPath('userData', path.join(__dirname, 'data'));
-if (!process.argv.includes('--vsync')) {
+if (process.argv.includes('--no-vsync')) {
   app.commandLine.appendSwitch('disable-frame-rate-limit');
   app.commandLine.appendSwitch('disable-gpu-vsync');
 }

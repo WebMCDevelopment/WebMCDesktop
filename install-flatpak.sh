@@ -1,0 +1,1 @@
+flatpak install --user --assumeyes webmc.flatpak

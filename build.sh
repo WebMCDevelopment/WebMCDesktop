@@ -1,5 +1,4 @@
 #!/bin/bash
-
 ARGS="$*"
 
 if [ -z "$ARGS" ]; then
