@@ -22,19 +22,19 @@ if ! flatpak remotes | grep -q flathub; then
 fi
 
 if ! flatpak info org.freedesktop.Platform//23.08 &> /dev/null; then
-  flatpak install -y --noninteractive --assumeyes --installation=system flathub org.freedesktop.Platform//23.08
+  flatpak install -y --noninteractive --assumeyes --installation=user flathub org.freedesktop.Platform//23.08
 fi
 
 if ! flatpak info org.freedesktop.Sdk//23.08 &> /dev/null; then
-  flatpak install -y --noninteractive --assumeyes --installation=system flathub org.freedesktop.Sdk//23.08
+  flatpak install -y --noninteractive --assumeyes --installation=user flathub org.freedesktop.Sdk//23.08
 fi
 
 if ! flatpak info org.electronjs.Electron2.BaseApp//23.08 &> /dev/null; then
-  flatpak install -y --noninteractive --assumeyes --installation=system flathub org.electronjs.Electron2.BaseApp//23.08
+  flatpak install -y --noninteractive --assumeyes --installation=user flathub org.electronjs.Electron2.BaseApp//23.08
 fi
 
 if ! flatpak info org.freedesktop.Sdk.Extension.node18//23.08 &> /dev/null; then
-  flatpak install -y --noninteractive --assumeyes --installation=system flathub org.freedesktop.Sdk.Extension.node18//23.08
+  flatpak install -y --noninteractive --assumeyes --installation=user flathub org.freedesktop.Sdk.Extension.node18//23.08
 fi
 
 mkdir -p tmp
