@@ -6,3 +6,4 @@ build-dir/
 .flatpak-builder/
 tmp/
 repo/
+webmc.flatpak
